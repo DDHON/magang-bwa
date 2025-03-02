@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 
 import localFont from "next/font/local";
 import "./globals.css";
-import path from "path";
+
 import Navbar from "@/components/Navbar";
-import SignUpForm from "@/components/SignUpForm";
 
 const poppins = localFont({
   src: [
