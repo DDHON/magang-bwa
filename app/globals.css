@@ -1,24 +1,17 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "poppins", sans-serif;
+  color: #0a0723;
+  background-color: #f8faf9;
+}
+@theme {
+  --font-poppins: var(--font-poppins);
+  --color-primary: #2f6a62;
+  --color-secondary: #0a0723;
+  --color-gray-outline: #eaecee;
+}
+
+@utility no-focus {
+  @apply shadow-none outline-none focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0;
 }

@@ -1,15 +1,34 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+
+import localFont from "next/font/local";
 import "./globals.css";
+import path from "path";
+import Navbar from "@/components/Navbar";
+import SignUpForm from "@/components/SignUpForm";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const poppins = localFont({
+  src: [
+    {
+      path: "./font/Poppins-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./font/Poppins-Bold.ttf",
+      weight: "700",
+      style: "bold",
+    },
+    {
+      path: "./font/Poppins-SemiBold.ttf",
+      weight: "600",
+      style: "semibold",
+    },
+    {
+      path: "./font/Poppins-ExtraBold.ttf",
+      weight: "800",
+      style: "ExtraBold",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -23,10 +42,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${poppins} antialiased `}>
+        <Navbar />
         {children}
       </body>
     </html>
